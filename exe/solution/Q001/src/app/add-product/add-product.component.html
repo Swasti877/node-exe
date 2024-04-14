@@ -1,0 +1,50 @@
+<form [formGroup]="productForm" (ngSubmit)="OnSubmit()" >
+    <h3>Add Item</h3>
+    <label for="TypeOfItem">Type Of Item</label>
+    <select name="" id="TypeOfItem" class="form-control" formControlName="TypeofProduct">
+        <option value="slected" selected>Select</option>
+        <option value="Coffee">Coffee</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Cakes">Cakes</option>
+    </select>
+    <div class="error" id="TypeOfItem-err" *ngIf="f['TypeofProduct'].errors">
+        <p>Choose Item</p>
+    </div>
+    <br>
+
+    <label for="">Item Name</label>
+    <input type="text" id="itemName" class="form-control" placeholder="Enter item name"  formControlName="ItemName">
+    <div class="error" id="itemName-err" *ngIf="f['ItemName'].touched  && f['ItemName'].errors">
+        <p *ngIf="f['ItemName'].errors['required']" >Enter Item Name
+        </p>
+    </div>
+
+    <label for="">Quantity</label>
+    <input type="number" id="Quantity" class="form-control" formControlName="Quantity">
+    <div class="error" id="Quantity-err"  *ngIf="f['Quantity'].touched && f['Quantity'].errors">
+        <p *ngIf="f['Quantity'].errors['required']">Enter Quantity</p>
+        <p *ngIf="f['Quantity'].errors['min']">Quantity should be greater than one</p>
+    </div>
+
+    <label for="">Price</label>
+    <div class="input-group-prepend">
+        <span class="input-group-text">RS</span>
+        <input type="number" class="form-control" id="price" formControlName="Price">
+    </div>
+    <div class="error" id="price-err" *ngIf="f['Price'].touched  && f['Price'].errors">
+        <p *ngIf="f['Price'].errors['required']">Enter Price</p>
+        <p *ngIf="f['Price'].errors['min']">Price should be greater than one or Equal to one</p>
+    </div>
+
+    <label for="">Discount</label>
+    <div class="input-group-prepend">
+        <input type="number" class="form-control" id="discount" formControlName="Discount">
+        <span class="input-group-text">%</span>
+    </div>
+    <div class="error" id="discount-err" *ngIf="f['Discount'].errors">
+        <p *ngIf="f['Discount'].errors['required']">Enter Discount</p>
+        <p *ngIf="f['Discount'].errors['min']">Discount should be greater than or equal to 0</p>
+        <p *ngIf="f['Discount'].errors['max']">Discount should be less than or equal to 100</p>
+    </div>
+    <button class="btn btn-success" [disabled]="!productForm.valid" id="AddItem">Add</button>
+</form>

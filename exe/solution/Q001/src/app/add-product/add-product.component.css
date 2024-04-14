@@ -1,0 +1,37 @@
+label{
+    font-size: 20px;
+}
+form{
+    border: 1px solid rgb(218, 215, 215);
+    background-color:rgb(255, 254, 254);
+    width: 500px;
+    margin: 5% 0% 0% 40%;
+    padding: 15px;
+}
+h3{
+    margin-left: 35%;
+    
+}
+.input-group-prepend{
+    display: flex;
+    flex-wrap: wrap;
+}
+#price{
+width: 90%;
+}
+#discount{
+    width: 90%;
+}
+.input-group-text{
+    width: 10%;
+    border-radius: 2px;
+    background-color: rgb(221, 221, 221);
+}
+.btn-success{
+    margin-left: 40%;
+    margin-top: 20px;
+    width: 70px;
+}
+.error{
+color: red;
+}

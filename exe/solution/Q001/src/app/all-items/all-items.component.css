@@ -1,0 +1,25 @@
+.Main{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.Card{
+    margin: 0px 0px 10px 40px;
+    padding: 10px;
+    text-align: center;
+    height: 330px;
+    width: 400px;
+    font-size: large;
+    box-shadow: 1px 1px 2px 2px gray;
+}
+h3{
+    font-weight: 700;
+    color: green;
+}
+span{
+    margin-left: 10px;
+    font-size: larger;
+    cursor: pointer;
+}

@@ -1,0 +1,12 @@
+<div class="Main">
+    <div class="Card" *ngFor="let product of ProductList" id="card-{{product.ItemName}}">
+        <h3>{{product.TypeofProduct | uppercase}}</h3>
+        <p><strong>Name :  </strong>{{product.ItemName}}</p>
+        <p><strong>Quantity : </strong>{{product.Quantity}}</p>
+        <p><strong>Price : </strong>{{product.Price}}</p>
+        <p><strong>Discount : </strong>{{product.Discount}}%</p>
+        <p style="color: rgb(15, 111, 238);"><strong  style="color: black;">Net Price : </strong>{{getNetPrice(product.Price,product.Discount)}}</p>
+        <hr>
+        <p><strong>Add Quantity:</strong><span id="{{product.ItemName}}-minusProductCount" (click)="DecrementQty(product.ItemName)">-</span><span id="qty-{{product.ItemName}}">{{product.addedQuantity}}</span><span id="{{product.ItemName}}-plusProductCount" (click)="IncrementQty(product.ItemName)">+</span></p>
+    </div>
+</div>
